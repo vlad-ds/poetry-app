@@ -1,0 +1,69 @@
+<%- include("partials/header"); -%>
+
+
+
+  <div class="main">
+
+    <div class="poems-list">
+
+      <% let c = 0; %>
+      <% let slice; %>
+
+      <%for(i=1; i <= sections; i++){%>
+      <% console.log(i) %>
+      <%slice = poems.slice(c, i*6);%>
+      <%c = i*6;%>
+
+      <div class="row">
+
+        <div class="col-md-4">
+        </div>
+
+        <div class="col-md-2">
+          <ul>
+            <li>
+              <% if(slice[0]){ %>
+              <a href="/poems/<%= slice[0].keyword %>"> <%= slice[0].title %></a>
+              <%}%>
+          </li>
+          <li>
+            <% if(slice[1]){ %>
+              <a href="/poems/<%= slice[1].keyword %>"> <%= slice[1].title %></a>
+              <%}%>
+          </li>
+          <li>
+            <% if(slice[2]){ %>
+              <a href="/poems/<%= slice[2].keyword %>"> <%= slice[2].title %></a>
+              <%}%>
+          </li>
+      </div>
+
+      <div class="col-md-2">
+        <ul>
+          <li>
+            <% if(slice[3]){ %>
+              <a href="/poems/<%= slice[3].keyword %>"> <%= slice[3].title %></a>
+              <%}%>
+          </li>
+          <li>
+            <% if(slice[4]){ %>
+              <a href="/poems/<%= slice[4].keyword %>"> <%= slice[4].title %></a>
+              <%}%>
+          </li>
+          <li>
+            <% if(slice[5]){ %>
+              <a href="/poems/<%= slice[5].keyword %>"> <%= slice[5].title %></a>
+              <%}%>
+          </li>
+        </ul>
+      </div>
+  </div>
+  <% } %>
+
+        </div>
+
+      </div>
+
+
+
+<%- include("partials/footer"); -%>

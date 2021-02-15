@@ -1,0 +1,34 @@
+<%- include("partials/header"); -%>
+
+<div class="poem-wrapper">
+
+
+  <div class="poem">
+
+
+    <h2 class="poem-title"> <%=poem.title%> </h2>
+    <p class="poem-body"> <%-poem.body%> </p>
+
+    <p class="poem-date">Added on <%=poem.date_added.toLocaleString('default', {day: 'numeric', year: 'numeric',  month: 'long' })%>.</p>
+
+    <hr>
+
+    <% const previousStyle = index === 0 ? "disabled" : "" %>
+    <% const nextStyle = index === lastIndex ? "disabled" : "" %>
+
+    <% let previousLink = index === 0 ? "" : "/index/" + (index - 1) %>
+    <% let nextLink = index === lastIndex ? "" : "/index/" + (index + 1) %>
+
+
+    <div class="nav-buttons">
+
+      <button class=<%= previousStyle %>> <a href=<%= previousLink %>><i class="fas fa-chevron-circle-left"></i></a></button>
+      <button type="button" name="button"><a href="/"><i class="fas fa-home"></i></a></button>
+      <button class=<%= nextStyle %>> <a href=<%=nextLink %>><i class="fas fa-chevron-circle-right"></i></a></button>
+
+    </div>
+
+  </div </div>
+
+
+  <%- include("partials/footer"); -%>
